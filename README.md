@@ -1,2 +1,2 @@
 # tens
-Visualizing of the place vale system
+Visualization of the place vale system
