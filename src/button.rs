@@ -39,9 +39,16 @@ impl ChangeBtn{
 	
 	// x: mx: mouse x, my: mouse_y  
 	pub fn check_mouse(&self) -> bool {
-		let vec = Vec::new();
-		let triangle_line = LineString(vec![self.vertex_a, self.vertex_b, self.vertex_c, self.vertex_a]);
-		let triangle = Polygon(triangle_line, vec);
+		let triangle_line = line_string![
+			(x: self.vertex_a.x(), y: self.vertex_a.y()),
+			(x: self.vertex_b.x(), y: self.vertex_b.y()),
+			(x: self.vertex_c.x(), y: self.vertex_c.y()),
+			(x: self.vertex_a.x(), y: self.vertex_a.y())
+		];
+		let triangle = Polygon::new(
+			triangle_line,
+			[].to_vec(),
+		);
 		let mouse = Point::new(mouse_position().0 as f32, mouse_position().1 as f32);
 		triangle.contains(&mouse)
 	}

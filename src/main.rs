@@ -4,7 +4,7 @@ mod button;
 
 mod prelude{
 	pub use macroquad::prelude::*;
-	pub use geo::{Point, LineString, Polygon};
+	pub use geo::{Point, LineString, Polygon, line_string};
 	pub use geo::algorithm::contains::Contains;
 	pub use std::{thread, time};
 	pub use crate::value::*;
